@@ -9,17 +9,17 @@ namespace Project_KTMH
     public class Payroll
     {
         public string PayrollID { get; private set; }
-        public int DepartmentID { get; private set; }
-        public int EmployeeID { get; private set; }
+        public string DepartmentID { get; private set; }
+        public string EmployeeID { get; private set; }
         public string EmployeeName { get; private set; }
         public double SalaryCoefficient { get; private set; }
         public double SalaryCoefficientDepartment { get; private set; }
         public double SalaryCoefficientPosition { get; private set; }
-        public decimal BaseSalary { get; private set; }
+        public decimal BaseSalary { get;  set; }
         public decimal OvertimeSalary { get; private set; }
         public decimal TotalSalary { get; private set; }
-        public int AttendanceDay { get; private set; }
-        public List<Attendance> AttendanceList { get; private set; }
+        public int AttendanceDay { get; set; }
+        public List<Attendance> AttendanceList { get; set; }
         public decimal BHXH { get; private set; }
         public decimal BHYT { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Project_KTMH
 
         public DateTime CalculationDate { get; private set; }
 
-        public Payroll(string payrollID, int departmentID, int employeeID, string employeeName,
+        public Payroll(string payrollID,string departmentID, string employeeID, string employeeName,
                       double salaryCoefficient, double salaryCoefficientDepartment, double salaryCoefficientPosition,
                       decimal baseSalary, int attendanceDay)
         {
@@ -76,7 +76,7 @@ namespace Project_KTMH
             decimal totalOvertime = 0;
             foreach (var attendance in AttendanceList)
             {
-                totalOvertime += attendance.OvertimeHours;
+                //totalOvertime += attendance.OvertimeHours;
             }
             return totalOvertime;
         }

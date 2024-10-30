@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_KTMH
 {
@@ -10,16 +11,15 @@ namespace Project_KTMH
     {
         private string login_name;
         private string password;
-        private string employee_ID;
 
         public string Login_name { get => login_name; set => login_name = value; }
         public string Password { get => password; set => password = value; }
-        public string Employee_ID { get => employee_ID; set => employee_ID = value; }
-        public User(string login_name, string password, string employee_ID)
+       
+        public User(string loginname, string password)
         {
-            this.login_name = login_name;
+            this.login_name = loginname;
             this.password = password;
-            this.employee_ID = employee_ID;
+
         }
 
         public bool Login(string username, string password)
@@ -35,14 +35,23 @@ namespace Project_KTMH
                 return false;
             }
         }
+        //private void btnLogOut_Click(object sender, EventArgs e)
+        //{
+        //    Logout();
+        //}
 
-
-        public void Logout()
-        {
-
-
-
-            Console.WriteLine("Đăng xuất thành công!");
-        }
+        //public void Logout()
+        //{
+            
+        //        foreach (sForm form in Application.OpenForms)
+        //        {
+        //            if (form != this) // Giữ lại LoginForm hoặc MainForm
+        //                form.Close();
+        //        }
+        //        this.Hide(); // Ẩn form hiện tại
+        //        UserForm loginForm = new UserForm();
+        //        loginForm.Show();
+        //    Console.WriteLine("Đăng xuất thành công!");
+        //}
     }
 }
